@@ -1,14 +1,13 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose"); /* Importing the Mongoose library to interact with the MongoDB database */
 async function connectDB() {
-    try {
-        await mongoose.connect('mongodb+srv://aniskhanniazi202_db_user:lNdX4jZevatuT35t@cluster0.e7dankz.mongodb.net/project1_fullstack_cloud', {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        });
-        console.log('Connected to MongoDB');
-    } catch (error) {
-        console.error('Error connecting to MongoDB:', error);
-        process.exit(1); // Exit the process with an error code
-    }
+  await mongoose
+    .connect(
+      "mongodb+srv://aniskhanniazi202_db_user:lNdX4jZevatuT35t@cluster0.e7dankz.mongodb.net/project1-fullstack-cloud",
+      {},
+    )
+    .then(() => console.log("Connected to DB successfully"))
+    .catch((err) => console.error("Could not connect to DB", err))
+    .finally(() => console.log("Connection attempt finished"));
 }
-module.exports = connectDB; /* Exporting the connectDB function so that it can be imported and used in other parts of the application, such as the server.js file where the server is started and the database connection is established */
+module.exports =
+  connectDB; /* Exporting the connectDB function to be used in other parts of the application */
