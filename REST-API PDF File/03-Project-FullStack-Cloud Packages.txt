@@ -1,0 +1,10 @@
+Frontend Packages...
+npm create vite@latest .
+npm i react-router-dom
+npm i axios
+Backend Packages...
+npm init -y For initiating the node.js application.
+npm i express mongoose. For installing the packages of express and mongoose.
+npm install @imagekit/nodejs. is the command used to download and install the official ImageKit SDK for Node.js into your web development project.
+npm i dotenv. is used to install the dotenv package, which loads secret settings and hidden values from a .env file into Node.js. It lets your code read passwords and API keys safely without writing them directly in your main file
+npm i cors. you are installing the cors package from the npm Registry into your Node.js project. it build the connection between the client-side and server-side.

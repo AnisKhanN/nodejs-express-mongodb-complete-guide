@@ -1,0 +1,5 @@
+npm init -y
+npm i express mongoose
+npm i dotenv
+npm i jsonwebtoken nstalls the jsonwebtoken library, which is used in Node.js applications to create (sign) and verify JSON Web Tokens (JWT) for secure user authentication and authorization.
+npm i cookie-parser : Used for creating a middleware for creating a cookies.
