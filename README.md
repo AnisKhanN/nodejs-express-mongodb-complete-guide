@@ -1,4 +1,4 @@
-# Node.js, Express.js & MongoDB — Complete Backend Learning Guide
+# Node.js, Express.js & MongoDB | Complete Backend Learning Guide
 
 A complete beginner-to-advanced backend development learning repository covering **Node.js, Express.js, MongoDB, REST APIs, authentication, JWT, cookies, API testing, middleware, validation, frontend-backend integration, and real-world backend projects**.
 
