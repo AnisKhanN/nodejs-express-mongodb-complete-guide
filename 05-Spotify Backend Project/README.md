@@ -11,7 +11,7 @@ This project is part of my **Node.js, Express.js & MongoDB Learning Journey**. I
 ## 📚 Project Overview
 
 This project focuses on building a backend API for a music-streaming-style application.
-
+S
 The current implementation includes:
 
 - User registration
