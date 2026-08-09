@@ -8,6 +8,7 @@ router.post("/create", async (req, res) => {
     return res.status(401).json({
       message: "Unauthorized",
     });
+    localhost: 3000 / api / posts / create;
   }
   try {
     const decode = jwt.verify(token, process.env.JWT_SECRET);
