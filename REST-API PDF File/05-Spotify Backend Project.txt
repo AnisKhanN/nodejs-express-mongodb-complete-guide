@@ -1,4 +1,4 @@
-npm initnote -y
+npm init -y
 npm i express mongoose dotenv jsonwebtoken cookie-parser
 npm i bcryptjs
 npm install @imagekit/nodejs
