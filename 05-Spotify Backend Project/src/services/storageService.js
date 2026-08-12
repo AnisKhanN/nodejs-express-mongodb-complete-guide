@@ -1,25 +1,45 @@
-const { ImageKit, toFile } = require("@imagekit/nodejs");
+const { ImageKit } = require("@imagekit/nodejs");
 
 const ImageKitClient = new ImageKit({
+  publicKey: process.env.IMAGEKIT_PUBLIC_KEY,
   privateKey: process.env.IMAGEKIT_PRIVATE_KEY,
+  urlEndpoint: process.env.IMAGEKIT_URL_ENDPOINT,
 });
 
 async function uploadFile(file) {
-  try {
-    const fileForUpload = file.buffer
-      ? await toFile(file.buffer, file.originalname || "audio.mp3")
-      : file;
-
-    const result = await ImageKitClient.files.upload({
-      file: fileForUpload,
-      fileName: `${Date.now()}-${file.originalname || "audio.mp3"}`,
-      folder: "spotify-music",
-    });
-    return result;
-  } catch (error) {
-    console.error("Error uploading file to ImageKit:", error);
-    throw error;
+  if (!file) {
+    throw new Error("No file provided for upload");
   }
+
+  const fileBuffer = file.buffer || file;
+  const originalName = file.originalname || `upload-${Date.now()}`;
+  const fileName = `${Date.now()}-${originalName}`;
+  const uploadPayload =
+    Buffer.isBuffer(fileBuffer) || fileBuffer instanceof Uint8Array
+      ? fileBuffer.toString("base64")
+      : fileBuffer;
+
+  const uploadOptions = {
+    file: uploadPayload,
+    fileName,
+    folder: "cluster0/spotifyDB/spotify-music",
+    useUniqueFileName: true,
+    tags: ["spotify", "music"],
+  };
+
+  const uploadResponse = await ImageKitClient.files.upload(uploadOptions);
+
+  return {
+    url: uploadResponse.url,
+    name: uploadResponse.name || fileName,
+    fileId: uploadResponse.fileId,
+    size: uploadResponse.size,
+    metadata: {
+      originalName,
+      mimeType: file.mimetype,
+      extension: originalName.split(".").pop(),
+    },
+  };
 }
 
 module.exports = {

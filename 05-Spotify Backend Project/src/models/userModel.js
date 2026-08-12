@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-
 const userSchema = new mongoose.Schema({
   username: {
     type: String,
@@ -14,8 +13,6 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true,
-    minlength: [6, "Password must be at least 6 characters long"],
-    match: [/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/, "Password must contain at least one uppercase letter, one lowercase letter, and one number"],
   },
   role: {
     type: String,
@@ -23,6 +20,5 @@ const userSchema = new mongoose.Schema({
     default: "user",
   },
 });
-
-const userModel = mongoose.model("users", userSchema);
+const userModel = mongoose.model("User", userSchema);
 module.exports = userModel;
