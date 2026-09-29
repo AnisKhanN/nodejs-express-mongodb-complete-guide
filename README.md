@@ -11,31 +11,38 @@ This repository contains my practical learning work, experiments, mini-projects,
 ```text
 nodejs-express-mongodb-learning/
 │
-├── 01-Creating & starting server using Express.js ...
+├── 01-Creating & starting server using Express.js & APIs & REST APIs Fundamentals/
 │   └── README.md
 │
-├── 02-Creating Notes APIs & testing with Postman
+├── 02-Creating Notes APIs & testing with Postman/
 │   └── README.md
 │
-├── 03-Project-FullStack-Cloud
+├── 03-Project-FullStack-Cloud/
 │   ├── Backend/
 │   │   └── README.md
 │   ├── Frontend/
 │   │   └── README.md
 │   └── README.md
 │
-├── 04-Authentication-Authorization-JWT-Cookies-Register-API
+├── 04-Authentication-Authorization-JWT-Cookies-Register-API/
 │   └── README.md
 │
-├── 05-Spotify Backend Project
+├── 05-Spotify Backend Project/
 │   └── README.md
 │
-├── 06-testing-with-jest-supertest
+├── 06-testing-with-jest-supertest/
+│   └── README.md
+│
+├── SaaS FYP Project/
+│   ├── backend/
+│   ├── frontend/
 │   └── README.md
 │
 ├── REST-API PDF File/
+│   └── README.md
 │
 ├── .gitignore
+├── package.json
 └── README.md
 ```
 
@@ -763,20 +770,21 @@ The next stages of backend development will include:
 
 # 📊 Repository Progress
 
-| Section | Topic | Status |
-|---|---|---|
-| 01 | Express.js Server | ✅ Completed |
-| 02 | Notes API + Postman | ✅ Completed |
-| 03 | Full-Stack Cloud Project | ✅ Practiced |
-| 04 | Authentication + JWT + Cookies | ✅ Practiced |
-| 05 | Spotify Backend Project | 🚧 Learning / Building |
-| 06 | Jest + Supertest | ✅ Practiced |
+| Section | Topic                          | Status                 |
+| ------- | ------------------------------ | ---------------------- |
+| 01      | Express.js Server Fundamentals | ✅ Completed           |
+| 02      | Notes API + Postman + MongoDB  | ✅ Completed           |
+| 03      | Full-Stack Cloud Project       | ✅ Completed           |
+| 04      | Authentication + JWT + Cookies | ✅ Completed           |
+| 05      | Spotify Backend Project        | 🚧 Learning / Building |
+| 06      | Jest + Supertest Testing       | ✅ Completed           |
+| FYP     | SmartClinic SaaS FYP Project   | ✅ Completed           |
 
 ---
 
 # 👨‍💻 Author
 
-**Anis Khan**
+**[Anis Khan Niazi](https://github.com/AnisKhanN)**
 
 Backend Development Learning Journey — 2026
 

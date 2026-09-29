@@ -1,13 +1,16 @@
-const mongoose = require("mongoose"); /* Importing the Mongoose library to interact with the MongoDB database */
+const mongoose = require("mongoose");
+
+/**
+ * Connect to MongoDB database using connection string from environment variables
+ */
 async function connectDB() {
-  await mongoose
-    .connect(
-      "mongodb+srv://aniskhanniazi202_db_user:lNdX4jZevatuT35t@cluster0.e7dankz.mongodb.net/myDatabase",
-      {},
-    )
-    .then(() => console.log("Connected to DB successfully"))
-    .catch((err) => console.error("Could not connect to DB", err))
-    .finally(() => console.log("Connection attempt finished"));
+  const uri = process.env.MONGO_URI || "mongodb://127.0.0.1:27017/notesDB";
+  try {
+    await mongoose.connect(uri);
+    console.log("✅ Connected to MongoDB successfully");
+  } catch (err) {
+    console.error("❌ Could not connect to MongoDB:", err.message);
+  }
 }
-module.exports =
-  connectDB; /* Exporting the connectDB function to be used in other parts of the application */
+
+module.exports = connectDB;

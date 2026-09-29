@@ -6,6 +6,13 @@ const bcrypt = require("bcryptjs");
 async function registerUser(req, res) {
   try {
     const { username, email, password, role = "user" } = req.body;
+
+    if (!password || (!username && !email)) {
+      return res.status(400).json({
+        message: "Password and at least username or email are required",
+      });
+    }
+
     // Check if user already exists
     const query = [];
     if (username) query.push({ username });
@@ -31,7 +38,7 @@ async function registerUser(req, res) {
     // Generating JWT token
     const token = jwt.sign(
       { id: newUser._id, role: newUser.role },
-      process.env.JWT_SECRET || "your_jwt_secret_key"
+      process.env.JWT_SECRET || "your_jwt_secret_key",
     );
     res.cookie("token", token, { httpOnly: true });
     res.status(201).json({
@@ -78,7 +85,7 @@ async function loginUser(req, res) {
     // Generating JWT token
     const token = jwt.sign(
       { id: user._id, role: user.role },
-      process.env.JWT_SECRET || "your_jwt_secret_key"
+      process.env.JWT_SECRET || "your_jwt_secret_key",
     );
     res.cookie("token", token, { httpOnly: true });
     res.status(200).json({

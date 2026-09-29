@@ -1,17 +1,24 @@
 {
   "name": "05-spotify-backend-project",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Music streaming API with JWT authentication, role authorization, and ImageKit storage",
+  "main": "server.js",
   "scripts": {
-    "key": "YOUR KEYBIND",
-    "command": "copilot-inline-toggle.switch",
-    "dev": "npx nodemon server.js",
     "start": "node server.js",
+    "dev": "npx nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "nodejs",
+    "express",
+    "mongodb",
+    "mongoose",
+    "spotify",
+    "imagekit",
+    "jwt",
+    "streaming"
+  ],
+  "author": "Anis Khan Niazi",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {

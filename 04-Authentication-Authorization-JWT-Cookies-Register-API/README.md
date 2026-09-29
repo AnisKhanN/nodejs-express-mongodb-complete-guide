@@ -236,6 +236,6 @@ By completing this project, I learned:
 
 ## 👨‍💻 Author
 
-**Anis Khan**
+**[Anis Khan Niazi](https://github.com/AnisKhanN)**
 
 Backend Development Learning Journey (2026)

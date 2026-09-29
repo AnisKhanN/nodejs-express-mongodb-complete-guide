@@ -107,13 +107,28 @@ Creating Notes APIs & Testing with Postman/
 npm install
 ```
 
-### 2. Start the Server
+### 2. Configure Environment Variables
 
-```bash
-node app.js
+Create a `.env` file in this directory based on `.env.example`:
+
+```env
+PORT=3000
+MONGO_URI=mongodb://127.0.0.1:27017/notesDB
 ```
 
-or, if using Nodemon:
+### 3. Start the Server
+
+```bash
+npm start
+```
+
+or directly:
+
+```bash
+node server.js
+```
+
+or with auto-reload (Nodemon):
 
 ```bash
 npm run dev
@@ -127,10 +142,16 @@ After starting the server:
 
 1. Open Postman.
 2. Create a new request.
-3. Select the appropriate HTTP method.
-4. Enter the API endpoint URL.
-5. Send the request.
-6. Verify the response and status code.
+3. Select the appropriate HTTP method (`GET`, `POST`, `PATCH`, `DELETE`).
+4. Enter the API endpoint URL (e.g., `http://localhost:3000/notes`).
+5. For `POST` and `PATCH`, provide a JSON body:
+   ```json
+   {
+     "title": "Study Plan",
+     "description": "Revise Node.js and MongoDB fundamentals"
+   }
+   ```
+6. Send the request and verify response and status code.
 
 ---
 
@@ -142,10 +163,10 @@ After starting the server:
 - [x] Handle JSON Requests
 - [x] Test APIs with Postman
 - [x] Understand HTTP Methods
-- [ ] Add Persistent Database
-- [ ] Implement Validation
-- [ ] Add Authentication
-- [ ] Deploy API
+- [x] Add Persistent Database (MongoDB & Mongoose)
+- [ ] Implement Validation Middleware
+- [ ] Add Authentication & Authorization
+- [ ] Deploy API to Cloud
 
 ---
 
@@ -157,6 +178,6 @@ This project is part of my **Backend Development Learning Journey**, where I am 
 
 ## 👨‍💻 Author
 
-**Anis Khan**
+**[Anis Khan Niazi](https://github.com/AnisKhanN)**
 
 Backend Development Learning Journey (2026)

@@ -779,7 +779,7 @@ Automated API Testing
 
 ## 👨‍💻 Author
 
-**Anis Khan**
+**[Anis Khan Niazi](https://github.com/AnisKhanN)**
 
 Node.js, Express.js & MongoDB Learning Journey — 2026
 

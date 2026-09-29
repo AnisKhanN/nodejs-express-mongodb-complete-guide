@@ -1,16 +1,26 @@
 {
-  "name": "file",
+  "name": "02-creating-notes-apis-postman",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Notes REST API with MongoDB and Postman testing",
+  "main": "server.js",
   "scripts": {
+    "start": "node server.js",
+    "dev": "npx nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "nodejs",
+    "express",
+    "mongodb",
+    "mongoose",
+    "rest-api",
+    "postman"
+  ],
+  "author": "Anis Khan Niazi",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "mongoose": "^9.7.0"
   }

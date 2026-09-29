@@ -1,17 +1,28 @@
 {
   "name": "nodejs-express-mongodb-learning",
   "version": "1.0.0",
-  "description": "A personal learning repository for backend development practice with Node.js, Express.js, and MongoDB, including a full SmartClinic SaaS demo project in the [smartclinic by codex](smartclinic%20by%20codex) folder.",
-  "main": "index.js",
+  "description": "Comprehensive learning guide and practical projects covering Node.js, Express.js, MongoDB, REST APIs, Authentication, Cloud Storage, and Automated Testing.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:06": "npm test --prefix \"06-testing-with-jest-supertest\""
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AnisKhanN/nodejs-express-mongodb-complete-guide.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "nodejs",
+    "express",
+    "mongodb",
+    "mongoose",
+    "rest-api",
+    "jwt",
+    "authentication",
+    "jest",
+    "supertest",
+    "imagekit",
+    "mern"
+  ],
+  "author": "Anis Khan Niazi",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {

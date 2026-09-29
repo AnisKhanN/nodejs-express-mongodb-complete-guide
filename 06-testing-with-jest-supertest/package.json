@@ -1,14 +1,23 @@
 {
   "name": "06-testing-with-jest-supertest",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "API unit and integration testing with Jest and Supertest",
+  "main": "server.js",
   "scripts": {
-    "dev": "npx nodemon server.js",
-    "start": "node server.js"
+    "test": "jest",
+    "start": "node server.js",
+    "dev": "npx nodemon server.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "nodejs",
+    "express",
+    "jest",
+    "supertest",
+    "testing",
+    "validation",
+    "express-validator"
+  ],
+  "author": "Anis Khan Niazi",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {

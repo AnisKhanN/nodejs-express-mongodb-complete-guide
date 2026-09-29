@@ -129,10 +129,16 @@ npm install
 ### 4. Start the server
 
 ```bash
-node app.js
+npm start
 ```
 
-or (if using Nodemon)
+or directly:
+
+```bash
+node server.js
+```
+
+or (if using Nodemon for auto-reload):
 
 ```bash
 npm run dev
@@ -173,6 +179,6 @@ This folder is part of my **Backend Development Learning Journey**. As I continu
 
 ## 👨‍💻 Author
 
-**Anis Khan**
+**[Anis Khan Niazi](https://github.com/AnisKhanN)**
 
 Backend Development Learning Journey (2026)

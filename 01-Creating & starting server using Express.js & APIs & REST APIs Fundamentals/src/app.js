@@ -1,51 +1,83 @@
-const express = require("express"); /* Importing the Express framework. Server ko crate krna */
+const express = require("express"); /* Importing the Express framework */
 const app = express(); /* Creating an instance of the Express application */
 app.use(express.json()); /** Middleware to parse JSON bodies */
-const notes = []; /* Array to store notes */
-/** title, description */
-/** POST is method /notes is the API name. */
+
+const notes = []; /* In-memory array to store notes */
+
+/**
+ * POST /notes
+ * Creates and appends a new note to the notes array
+ */
 app.post("/notes", (req, res) => {
-  /* Adding a new note to the notes array */
-  notes.push(
-    req.body,
-  ); /* req.body contains the data sent in the request body */
-  res.status(201).send({
+  const { title, description } = req.body;
+  if (!title || !description) {
+    return res.status(400).json({
+      message: "Both title and description are required",
+    });
+  }
+
+  const newNote = { title, description, createdAt: new Date() };
+  notes.push(newNote);
+
+  res.status(201).json({
     message: "Note added successfully",
-  }); /* Sending a response with status code 201 (Created) and a success message */
+    note: newNote,
+  });
 });
-/** GET is method /notes is the API name. */
+
+/**
+ * GET /notes
+ * Retrieves all notes from the array
+ */
 app.get("/notes", (req, res) => {
-  /* Fetching all notes from the notes array and sending them in the response */
-  res.status(200).send({
-    notes: "Notes fetched successfully",
+  res.status(200).json({
+    message: "Notes fetched successfully",
     notes: notes,
-  }); /* Sending a response with status code 200 (OK) and the notes data */
+  });
 });
-/** DELETE is method /notes/1 */
+
+/**
+ * DELETE /notes/:index
+ * Removes a note from the array by its index
+ */
 app.delete("/notes/:index", (req, res) => {
-  /* Deleting a note from the notes array based on the index provided in the URL parameter */
-  const index =
-    req.params
-      .index; /* Converting the index from the URL parameter to a zero-based index */
-  delete notes[
-    index
-  ]; /* Deleting the note at the specified index from the notes array */
+  const index = parseInt(req.params.index, 10);
+  if (isNaN(index) || index < 0 || index >= notes.length) {
+    return res.status(404).json({
+      message: "Note not found at given index",
+    });
+  }
+
+  notes.splice(index, 1);
   res.status(200).json({
     message: "Note deleted successfully",
-  }); /* Sending a response with status code 204 (No Content) and a success message */
+  });
 });
+
+/**
+ * PATCH /notes/:index
+ * Updates note description by its index
+ */
 app.patch("/notes/:index", (req, res) => {
-  /* Updating a note in the notes array based on the index provided in the URL parameter */
-  const index =
-    req.params
-      .index; /* Converting the index from the URL parameter to a zero-based index */
-  const description =
-    req.body
-      .description; /* Extracting the new description from the request body */
-  notes[index].description =
-    description; /* Updating the description of the note at the specified index in the notes array */
-  res.status(200).send({
+  const index = parseInt(req.params.index, 10);
+  if (isNaN(index) || index < 0 || index >= notes.length) {
+    return res.status(404).json({
+      message: "Note not found at given index",
+    });
+  }
+
+  const { description } = req.body;
+  if (!description) {
+    return res.status(400).json({
+      message: "Description is required for update",
+    });
+  }
+
+  notes[index].description = description;
+  res.status(200).json({
     message: "Note updated successfully",
-  }); /* Sending a response with status code 200 (OK) and a success message */
+    note: notes[index],
+  });
 });
+
 module.exports = app;

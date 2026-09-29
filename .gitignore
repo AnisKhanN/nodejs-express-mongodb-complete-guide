@@ -1,0 +1,46 @@
+# Node dependencies
+node_modules/
+*/node_modules/
+*/*/node_modules/
+*/*/*/node_modules/
+
+# Environment and secrets
+.env
+.env.*
+*.env
+!.env.example
+!*/.env.example
+!*/*/.env.example
+*password*
+*credentials*
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Diagnostic and coverage
+.nyc_output
+coverage/
+
+# OS and Editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Build outputs & Archives
+dist/
+build/
+*.zip
+*.tar.gz
+*.rar
