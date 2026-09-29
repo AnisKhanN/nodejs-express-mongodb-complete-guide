@@ -33,11 +33,6 @@ nodejs-express-mongodb-learning/
 ├── 06-testing-with-jest-supertest/
 │   └── README.md
 │
-├── SaaS FYP Project/
-│   ├── backend/
-│   ├── frontend/
-│   └── README.md
-│
 ├── REST-API PDF File/
 │   └── README.md
 │
@@ -778,7 +773,6 @@ The next stages of backend development will include:
 | 04      | Authentication + JWT + Cookies | ✅ Completed           |
 | 05      | Spotify Backend Project        | 🚧 Learning / Building |
 | 06      | Jest + Supertest Testing       | ✅ Completed           |
-| FYP     | SmartClinic SaaS FYP Project   | ✅ Completed           |
 
 ---
 
